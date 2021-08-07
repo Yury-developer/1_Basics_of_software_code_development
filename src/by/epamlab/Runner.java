@@ -1,7 +1,10 @@
 package by.epamlab;
 
+import by.epamlab.cycles.Block3;
 import by.epamlab.linearPrograms.Block1;
 import by.epamlab.branches.Block2;
+
+import java.util.Scanner;
 
 /**
  * -= Тестовый класс =-
@@ -27,6 +30,19 @@ public class Runner {
         Block2.getResultTask4(10, 20,   10, 20,30); // Пройдет
         Block2.getResultTask5(2); // 7.0
 
+        // Циклы
+        // 1
+        {
+            System.out.println("\n 3.1. Напишите программу, где пользователь вводит " +
+                    "любое целое положительное число. А программа суммирует " +
+                    "все числа от 1 до введенного пользователем числа.");
+            Scanner in = new Scanner(System.in);
+            System.out.println("Введите целое положительное число: ");
+            int number = in.nextInt();
+            int result = Block3.getResultTask1(number);
+//            int result = Block3.getResultTask1(4); // 10
+            System.out.println("number = " + number + "\n\t результат = " + result );
+        }
 
     }
 
