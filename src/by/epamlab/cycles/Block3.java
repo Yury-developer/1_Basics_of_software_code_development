@@ -6,6 +6,7 @@ package by.epamlab.cycles;
  * @author Yury Lapitski
  */
 import java.math.BigInteger;
+import java.util.Arrays;
 
 import static java.lang.Math.*;
 public class Block3 {
@@ -42,14 +43,36 @@ public class Block3 {
     }
 
     // 3.4. Составить программу нахождения произведения квадратов первых двухсот чисел.
-    public static long getResultTask4(int begin) {
-        BigInteger result = new BigInteger();
-        for (int i=1; i < 200; i++) {
-            result = result * (int) pow(begin + i, 2);
-            System.out.println(result);
+    public static BigInteger getResultTask4(int begin) {
+        BigInteger result = BigInteger.valueOf(begin).pow(2);
+        for (int i=1; i <= 200; i++) {
+            BigInteger next = BigInteger.valueOf(begin + i).pow(2);
+            result = result.multiply(next);
+            System.out.println("\n\t" + result);
         }
         return result;
     }
 
+    // 3.5. Даны  числовой  ряд  и  некоторое  число  е.
+    // Найти  сумму  тех  членов  ряда,  модуль  которых
+    // больше  или  равен заданному е. Общий член ряда имеет вид: a(n) = 1/(2^n) + 1/(3^n)
+    public static double getResultTask5(double e) {
+        int n = 1;
+        double item = 0;
+        double result = 0;
+        do {
+            result += item;
+            item = 1/(2*pow(2,n)) + 1/(3*pow(3,n));
+            n++;
+        } while (abs(item) >= e);
+        return result;
+    }
+
+    // 3.6. Вывести на экран соответствий между символами
+    // и их численными обозначениями в памяти компьютера.
+    public static char[] getResultTask6(String inputString) {
+        char[] result = inputString.toCharArray();
+        return result;
+    }
 
 }
