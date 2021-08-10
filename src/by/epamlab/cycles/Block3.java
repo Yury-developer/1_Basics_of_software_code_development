@@ -75,4 +75,33 @@ public class Block3 {
         return result;
     }
 
+    // 3.7. Для каждого натурального числа в промежутке от m до n
+    // вывести все делители, кроме единицы и самого числа.
+    // m и n вводятся с клавиатуры.
+    public static int[][] getResultTask7(int m, int n) {
+        int sizeDefault = n - m;
+        int result[][] = new int[sizeDefault][];
+        int iIter = 0;
+        for(int i = m; i < n; i++) { // переберем все числа
+            int items[] = new int[sizeDefault];
+            int jIter = 0;
+            for(int j = 2; j < i; j++) {
+                if((i % j) == 0) {
+                    items[jIter++] = j;
+                }
+
+            }
+            if(jIter > 0) {
+                result[iIter][1] = i;
+                result[iIter][2] = items;
+                iIter++;
+            }
+        }
+
+        char[] result = inputString.toCharArray();
+        return result;
+    }
+    public
+
+
 }
